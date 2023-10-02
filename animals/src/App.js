@@ -26,7 +26,7 @@ const App = () => {
   const [data, setData] = useState("");
   const [papi, setPublic] = useState("");
  // to set with input form later const [amount, setAmount] = useState("");
- const amountvar = 2;
+ const amountvar = 7;
 
  //const amount = 3;
   function handleClick () {
@@ -66,6 +66,8 @@ const App = () => {
     <Name /> 
     {data ? <pre>{JSON.stringify(data.message, null, 2)}</pre> : "Loading..."}
     {papi ? <pre>{JSON.stringify(papi, null, 2)}</pre> : "Loading..."}
+    <p> hello pt 6</p>
+    <ApiTest amountvar= {amountvar}/>
     {/*<BrowserRouter>
        <Routes> 
       <Route path = "/" element={<File />}/>
