@@ -15,11 +15,11 @@ router.get("/", function(req, res, next){
     console.log(amount);
   const url = `https://cat-fact.herokuapp.com/facts/random?amount=${amount}`;
 
-  fetch(url)
-    .then((response) => response.json())
-    .then((json) =>
-      res.send({ message: "PUBLIC API dog cat yooo", response: json })
-    )
+    fetch(url)
+    .then((response) => response.json())
+    .then((json) =>
+    res.send({ message: "PUBLIC API dog cat yooo", response: json })
+    )
     .catch (error => console.error("error: " + error ));
 
     console.log("HELLO from AINE");
