@@ -7,19 +7,26 @@ var client_id = 'CLIENT_ID';
 
 router.get("/login",function(req,res){
     var state = generateRandomString(16);
-    var scope = 'user-read-private user-read-email';
-  
-    res.redirect('https://accounts.spotify.com/authorize?' +
-      querystring.stringify({
-        response_type: 'code',
-        client_id: client_id,
-        scope: scope,
-        redirect_uri: redirect_uri,
-        state: state
-      }));
+
+    const authEndpoint = "https://accounts.spotify.com/authorize";
+    const redirectUri = "http://localhost:3000/";
+    const clientId = "d1e0958e07554c9ab948bcd0940b0674";
+    const scopes = [
+        "streaming",
+        "user-read-email",
+        "user-read-private",
+      ];
+
+    res.redirect(`${authEndpoint}?client_id=${clientId}&response_type=code&redirect_uri=${redirectUri}&scope=${scopes.join(
+        "%20"
+      )}`
+     );
 
 } );
 
-module.exports(router);
+// loginUrl = "https://accounts.spotify.com/authorize?client_id=YourClientId&response_type=code&redirect_uri=https://localhost:3000/&scope=streaming%20user-read-email%20user-read-private"
+
+
+module.exports = router;
 
 

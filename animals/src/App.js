@@ -18,6 +18,7 @@ import { NamedExport } from "./pages/dog";
 import Form from "./pages/form";
 import Name from "./pages/name"
 import ApiTest from "./pages/apitest";
+import Login from "./pages/login";
 //import { use } from "../../api/routes";
 
 const App = () => {
@@ -88,12 +89,14 @@ const App = () => {
              <ul>
                <li><Link to="/cats">Cat</Link></li>
                <li><Link to = "/publicAPI">Call API</Link></li>
+               <li><Link to = "/spotifyauth">Spotify Auth</Link></li>
              </ul> 
        <Routes>
          <Route  path="/cats" element={<File />}></Route>
          <Route  path="/" element={<NamedExport />}></Route>
          <Route path = "/form" element= {<Form index = {index} handleClick={handleClick}/>}></Route>
         { <Route path = "/publicAPI" element = { <ApiTest amountvar= {info.catfacts} />}></Route> }
+        <Route path = "/spotifyauth" element = {<Login/>}></Route>
        </Routes>
       </Router>
      
