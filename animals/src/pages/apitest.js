@@ -13,7 +13,7 @@ const ApiTest = ({amountvar}) => {
       .then(response => response.json())
       .then(json => {setPublic(json)})
       .catch(error => console.error(error));
-      }, []
+      }, [amountvar]
       );
       return (
         <div>
