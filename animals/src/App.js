@@ -25,6 +25,7 @@ const App = () => {
   const [index, setIndex] = useState(0);
   const [data, setData] = useState("");
   const [papi, setPublic] = useState("");
+  const [info, setInfo] = useState({catfacts: "0"});
  // to set with input form later const [amount, setAmount] = useState("");
  const amountvar = 7;
 
@@ -48,7 +49,7 @@ const App = () => {
     useEffect(() => {
       //fetch("https://cat-fact.herokuapp.com/facts")
       
-    fetch("http://localhost:9000/publicAPI")
+    fetch("http://localhost:9000/publicAPI?amount=2")
     .then(response => response.json() )
     .then(json => {setPublic(json)})
     .catch(error => console.error(error))
@@ -63,9 +64,13 @@ const App = () => {
        <NamedExport />
        <Form index= {index} handleClick = {handleClick}/>
        <Form index= {index} handleClick = {handleClick}/>
+       {/*<label> First Name: <input value= {info.firstName} onChange={e => setInfo( {...info, firstName : e.target.value })} /> </label>*/} 
+       <label> Amount of Cat Facts: <input value= {info.catfacts} onChange={e => setInfo({...info, catfacts: e.target.value })} /> </label> 
        <Name /> 
        {data ? <pre>{JSON.stringify(data.message, null, 2)}</pre> : "Loading..."}
        {papi ? <pre>{JSON.stringify(papi, null, 2)}</pre> : "Loading..."}
+       <p>{info.catfacts}</p>
+
        {/*<BrowserRouter>
           <Routes> 
          <Route path = "/" element={<File />}/>
@@ -88,7 +93,7 @@ const App = () => {
          <Route  path="/cats" element={<File />}></Route>
          <Route  path="/" element={<NamedExport />}></Route>
          <Route path = "/form" element= {<Form index = {index} handleClick={handleClick}/>}></Route>
-        { <Route path = "/publicAPI" element = { <ApiTest amountvar= {amountvar} />}></Route> }
+        { <Route path = "/publicAPI" element = { <ApiTest amountvar= {info.catfacts} />}></Route> }
        </Routes>
       </Router>
      
