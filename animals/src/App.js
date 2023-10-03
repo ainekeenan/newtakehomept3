@@ -57,43 +57,41 @@ const App = () => {
   
 
     //    {data ? <pre>{JSON.stringify(data,null,2)} </pre>: "Loading ...</p"}
-   return(
-   <div>
-    <File />
-    <NamedExport />
-    <Form index= {index} handleClick = {handleClick}/>
-    <Form index= {index} handleClick = {handleClick}/>
-    <Name /> 
-    {data ? <pre>{JSON.stringify(data.message, null, 2)}</pre> : "Loading..."}
-    {papi ? <pre>{JSON.stringify(papi, null, 2)}</pre> : "Loading..."}
-    <p> hello pt 6</p>
-    <ApiTest amountvar= {amountvar}/>
-    {/*<BrowserRouter>
-       <Routes> 
-      <Route path = "/" element={<File />}/>
-   </Routes> 
-   </BrowserRouter> */}
-
-         {/* <ul>
-            <li><Link to="/cats">Cat</Link></li>
-          </ul> 
-          
-          <ul>
-            <li> <Link to = "/cats">Cat</Link></li>
-          </ul>*/}
-   {/* } <Router> 
-          <ul>
-            <li><Link to="/cats">Cat</Link></li>
-          </ul> 
-            <Routes>
-               <Route  path="/cats" element={<File />}></Route>
-                <Route  path="/" element={<NamedExport />}></Route>
-                <Route path = "/form" element= {<Form index = {index} handleClick={handleClick}/>}></Route>
-                <Route path = "/publicAPI" element = { <ApiTest amount={amountvar} />}></Route>
-            </Routes>
-        </Router>    */}
-  
-    </div> );
+    return(
+      <div>
+       <File />
+       <NamedExport />
+       <Form index= {index} handleClick = {handleClick}/>
+       <Form index= {index} handleClick = {handleClick}/>
+       <Name /> 
+       {data ? <pre>{JSON.stringify(data.message, null, 2)}</pre> : "Loading..."}
+       {papi ? <pre>{JSON.stringify(papi, null, 2)}</pre> : "Loading..."}
+       {/*<BrowserRouter>
+          <Routes> 
+         <Route path = "/" element={<File />}/>
+      </Routes> 
+      </BrowserRouter> */}
+   
+            {/* <ul>
+               <li><Link to="/cats">Cat</Link></li>
+             </ul> 
+             
+             <ul>
+               <li> <Link to = "/cats">Cat</Link></li>
+             </ul>*/}
+      <Router> 
+             <ul>
+               <li><Link to="/cats">Cat</Link></li>
+             </ul> 
+       <Routes>
+         <Route  path="/cats" element={<File />}></Route>
+         <Route  path="/" element={<NamedExport />}></Route>
+         <Route path = "/form" element= {<Form index = {index} handleClick={handleClick}/>}></Route>
+        {/*  <Route path = "/publicAPI" element = { <ApiTest amount={amountvar} />}></Route> */}
+       </Routes>
+      </Router>
+     
+       </div> );
 };
 
 export default App;
