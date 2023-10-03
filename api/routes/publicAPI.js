@@ -10,10 +10,10 @@ router.get("/", function(req, res, next){
     
     console.log("HELLO from blitz");
     console.log("cat woo ")
-    
-     const amount = req.query.amount;
-    console.log(amount);
-  const url = `https://cat-fact.herokuapp.com/facts/random?amount=${amount}`;
+
+    const amount = req.query.amount;
+    const url = `https://cat-fact.herokuapp.com/facts/random?amount=${amount}`;
+
 
     fetch(url)
     .then((response) => response.json())
