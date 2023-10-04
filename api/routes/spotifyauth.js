@@ -1,15 +1,14 @@
 var express = require("express");
-var redirect_uri = "http://localhost:3000/";
+var redirect_uri = "http://localhost:3000/spotifyauth";
 const { response } = require("../app");
 var router = express.Router();
 
 var client_id = 'CLIENT_ID';
 
-router.get("/login",function(req,res){
-    var state = generateRandomString(16);
-
+router.get("/",function(req,res){
+  
     const authEndpoint = "https://accounts.spotify.com/authorize";
-    const redirectUri = "http://localhost:3000/";
+    const redirectUri = "http://localhost:3000/spotifyauth";
     const clientId = "d1e0958e07554c9ab948bcd0940b0674";
     const scopes = [
         "streaming",
@@ -17,10 +16,14 @@ router.get("/login",function(req,res){
         "user-read-private",
       ];
 
+
     res.redirect(`${authEndpoint}?client_id=${clientId}&response_type=code&redirect_uri=${redirectUri}&scope=${scopes.join(
         "%20"
       )}`
-     );
+    ); 
+
+    
+    
 
 } );
 
