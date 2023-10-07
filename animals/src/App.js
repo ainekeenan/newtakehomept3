@@ -19,6 +19,7 @@ import Form from "./pages/form";
 import Name from "./pages/name"
 import ApiTest from "./pages/apitest";
 import Login from "./pages/login";
+import Afterauth from "./pages/afterauth";
 //import { use } from "../../api/routes";
 
 const App = () => {
@@ -29,6 +30,8 @@ const App = () => {
   const [info, setInfo] = useState({catfacts: "0"});
  // to set with input form later const [amount, setAmount] = useState("");
  const amountvar = 7;
+ const authCode = new URLSearchParams(window.location.search).get('code')
+
 
  //const amount = 3;
   function handleClick () {
@@ -66,11 +69,12 @@ const App = () => {
        <Form index= {index} handleClick = {handleClick}/>
        <Form index= {index} handleClick = {handleClick}/>
        {/*<label> First Name: <input value= {info.firstName} onChange={e => setInfo( {...info, firstName : e.target.value })} /> </label>*/} 
-       <label> Amount of Cat Facts: <input value= {info.catfacts} onChange={e => setInfo({...info, catfacts: e.target.value })} /> </label> 
+       {/*<label> Amount of Cat Facts: <input value= {info.catfacts} onChange={e => setInfo({...info, catfacts: e.target.value })} /> </label>  */}
        <Name /> 
-       {data ? <pre>{JSON.stringify(data.message, null, 2)}</pre> : "Loading..."}
+       {/* {data ? <pre>{JSON.stringify(data.message, null, 2)}</pre> : "Loading..."}
        {papi ? <pre>{JSON.stringify(papi, null, 2)}</pre> : "Loading..."}
-       <p>{info.catfacts}</p>
+    <p>{info.catfacts}</p> */}
+       
 
        {/*<BrowserRouter>
           <Routes> 
@@ -87,7 +91,7 @@ const App = () => {
              </ul>*/}
       <Router> 
              <ul>
-               <li><Link to="/cats">Cat</Link></li>
+               <li><Link to="/cats">Welcome</Link></li>
                <li><Link to = "/publicAPI">Call API</Link></li>
                <li><Link to = "/spotifyauth">Spotify Auth</Link></li>
              </ul> 
@@ -95,8 +99,9 @@ const App = () => {
          <Route  path="/cats" element={<File />}></Route>
          <Route  path="/" element={<NamedExport />}></Route>
          <Route path = "/form" element= {<Form index = {index} handleClick={handleClick}/>}></Route>
-        { <Route path = "/publicAPI" element = { <ApiTest amountvar= {info.catfacts} />}></Route> }
-        <Route path = "/spotifyauth" element = {<Login/>}></Route>
+        { <Route path = "/publicAPI" element = { <ApiTest />}></Route> }
+        <Route path = "/spotifyauth" element = {authCode ? <Afterauth code = {authCode}/> : <Login/>}></Route>
+    
        </Routes>
       </Router>
      

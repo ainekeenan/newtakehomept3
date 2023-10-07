@@ -9,6 +9,7 @@ var usersRouter = require('./routes/users');
 var testAPIRouter = require("./routes/testAPI");
 var publicAPIRouter = require("./routes/publicAPI")
 var spotifyauthRouter = require("./routes/spotifyauth")
+var spotifyRouter = require("./routes/spotify")
 var app = express();
 
 // view engine setup
@@ -26,6 +27,7 @@ app.use('/users', usersRouter);
 app.use("/testAPI", testAPIRouter);
 app.use("/publicAPI", publicAPIRouter);
 app.use("/spotifyauth", spotifyauthRouter);
+app.use("/spotify", spotifyRouter)
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

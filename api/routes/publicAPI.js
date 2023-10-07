@@ -18,7 +18,7 @@ router.get("/", function(req, res, next){
     fetch(url)
     .then((response) => response.json())
     .then((json) =>
-    res.send({ message: "PUBLIC API dog cat yooo", response: json })
+    res.send({response: json })
     )
     .catch (error => console.error("error: " + error ));
 

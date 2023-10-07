@@ -1,31 +1,28 @@
 import React from 'react'
 import { useState, useEffect } from "react";
 import { loginUrl } from "./spotify";
+import "../App.css"
+
 
 
 function Login() {
-    const [papi, setPublic] = useState("");
+    const empty = "   ";
+    {/* const [papi, setPublic] = useState("");
     useEffect(() => {
-    //fetch("https://cat-fact.herokuapp.com/facts")
-    //const url = `https://cat-fact.herokuapp.com/facts/random?amount=${amount}`;
     
-    fetch(`http://localhost:9000/spotifyauth`, {redirect:'follow'})
-      .then(response => {
-        if (response.redirected) {
-          window.location.replace(response.url); 
-        // creates the second request, and change the content
-          return;
-        }} )
-      .catch(error => console.error(error));
+    {/* fetch(`http://localhost:9000/spotifyauth`)
+    .then(response => response.json())
+    .then(json => {setPublic(json)})
+    .catch(error => console.error(error));
       }, []
-      );
+    );   } */} 
     return (
         <div >
-            <img src="https://getheavy.com/wp-content/uploads/2019/12/spotify2019-830x350.jpg" alt="Spotify-Logo"/>
-            {/* <a href={loginUrl}>LOGIN WITH SPOTIFY</a> */}
-            {papi ? <pre>{JSON.stringify(papi, null, 2)}</pre> : "Loading..."}
+             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_Z5nJmPgNhlfexGHjDEXTWSwH4zpIKSHN8g&usqp=CAU" alt="Spotify-Logo"/> 
+             <a href={loginUrl}>Click HERE to login with Spotify</a>  
+             
         </div>
     )
 }
 
-export default Login
+export default Login;
