@@ -9,7 +9,7 @@ Future features areand recieve your top tracks, artists, and more from Spotify! 
 
 The product vision is a place were Aggies can come to distress and connect. They can find cat facts and the top 5 tracks of UC Davis students!
 
-How to install and start the application: 
+# How to install and start the application: 
 - Clone this git hub repository
 - cd into api
 - run command: npm install
@@ -21,7 +21,7 @@ How to install and start the application:
 - run command: npm start
 - Navigate to http://localhost:3000/
 
-How to use the application: 
+# How to use the application: 
 - The main menu provides a welcome and fidget toys.
 - Under the main menu, you will see a link for Welcome, Call API, and Spotify Auth
 - Under Call API, you can enter how many cat facts you would like, and the JSON will appear.
@@ -32,7 +32,7 @@ Important NOTE: This application is in development mode. While you will recieve 
 
 Enjoy the application! Listen to music and destress. 
 
-Error Debugging: 
+# Error Debugging: 
 -  My client ID and secret are encoded into the application. This is normal practice.  If you run into a error due to client reasons, you can replace my client ID and secret with your own. You can create a project, and client ID and secret at https://developer.spotify.com/. 
 The following files use the client ID and secret.
 - api/routes/spotify.js
