@@ -27,6 +27,8 @@ The product vision is a place were Aggies can come to distress and connect. They
 - Under Call API, you can enter how many cat facts you would like, and the JSON will appear.
 - Under Spotify Auth, you can click the link to login with your spotify account (account is required, you can create a dummy account)
 - After, your spotify API code will be displayed. Click the get Token button and your spotify API token will appeaer. 
+
+
 Important NOTE: This application is in development mode. While you will recieve your API Token, the backend will stop working due to an error with a library I am using. If you want to continue with the front end and backend connected, cd animals and type npm start. You will now be able to continue using the application. 
 
 
