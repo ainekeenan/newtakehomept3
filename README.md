@@ -5,7 +5,7 @@ Hello! This application serves as the take home assignment for AggieWorks F23 fo
 
 The application is a mix of experiences, with the main features at the momemnt being: selecting how many cat facts you would like to recieve, and authorize the application to connect to your spotify, and ask the spotify API for an access token. The frontend is written in React and the backend is in the Node framework express.js . 
 
-Future features areand recieve your top tracks, artists, and more from Spotify! After, a feature would be added that will connect users top 5 tracks from the mid-past time range to a database, and will display the top 5 in the database. 
+Future features areand recieve your top tracks, artists, and more from Spotify! After, a feature would be added that will store all users top 5 tracks from the mid-past time range to a database, and will display the overall top 5 tracks. 
 
 The product vision is a place were Aggies can come to distress and connect. They can find cat facts and the top 5 tracks of UC Davis students!
 
