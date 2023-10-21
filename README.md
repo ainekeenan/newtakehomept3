@@ -1,7 +1,7 @@
 # newtakehomept3
 
 
-Hello! This application serves as the take home assignment for AggieWorks F23 for Aine Keenan.
+Hello! 
 
 The application is a mix of experiences, with the main features at the momemnt being: selecting how many cat facts you would like to recieve, and authorize the application to connect to your spotify, and ask the spotify API for an access token. The frontend is written in React and the backend is in the Node framework express.js . 
 
